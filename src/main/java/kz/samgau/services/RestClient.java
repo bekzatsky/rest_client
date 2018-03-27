@@ -19,14 +19,14 @@ import java.util.Map;
 
 public class RestClient implements Runnable {
 
-    private Map getProperties() {
-        Map prop = new HashMap<String, String>();
+    private Map<String, String> getProperties() {
+        Map<String, String> prop = new HashMap<>();
         String path = "jdbc:sqlite:" + System.getProperty("user.home") + File.separator + "Desktop" + File.separator + "contract.db";
         prop.put("hibernate.connection.url", path);
         return prop;
     }
 
-    private Map properties = getProperties();
+    private Map<String, String> properties = getProperties();
 
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("rest", properties);
 
